@@ -16,12 +16,14 @@ def generateGraph(n,m):
         pairs.append(i)
     random.shuffle(pairs)
     i = 0
+    j = 0
     while i < m:
-        if graph[pairs[i][0]][pairs[i][1]] == -1:
-            graph[pairs[i][0]][pairs[i][1]] = weights[i]
+        if graph[pairs[j][0]][pairs[j][1]] == -1:
+            graph[pairs[j][0]][pairs[j][1]] = weights[i]
             #  Adiciona-se tambem o simetrico
-            graph[pairs[i][1]][pairs[i][0]] = weights[i]
+            graph[pairs[j][1]][pairs[j][0]] = weights[i]
             i = i+1
+        j = j+1
     for i in range(0,n):
         print graph[i]
     return graph
